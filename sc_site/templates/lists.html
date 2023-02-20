@@ -1,0 +1,15 @@
+<div>
+    <h1>List Page</h1>
+  </div>
+  {% for sample in sample_list %}
+    <div>
+      <p>{{ sample.title }}:{{ sample.text }}</p>
+    </div>
+  {% endfor %}
+
+  <hr/>
+  <form method="POST" class="post-form">{% csrf_token %}
+    <input type="text" name="title" maxlength="10"></br>
+    <input type="text" name="text" maxlength="30">
+    <button type="submit">Save</button>
+  </form>

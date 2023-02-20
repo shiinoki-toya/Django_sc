@@ -1,0 +1,36 @@
+{% load static %}
+<!doctype html>
+<html lang="ja">
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="{% static 'css/base1.css' %}">
+    {% block css_block %}
+    <!-- この中は継承先で定義 -->
+    {% endblock %}
+    
+    {% block title %}
+    <!-- この中は継承先で定義 -->
+    {% endblock %}
+    
+</head>
+
+<body>
+    <header>
+        <h1 class="headline">
+          <a>商品ロゴ名称</a>
+        </h1>
+    </header>
+
+    {% block body_block %}
+    <!-- この中は継承先で定義 -->
+    {% endblock %}
+
+    <footer>
+        <ul class="footer-menu">
+         <li>会社インフォメーション</li>
+    
+        </ul>
+        <p>Copyright © 2022 XXX, ALLRights Reserved</p>
+      </footer>
+</body>
+</html>

@@ -1,0 +1,21 @@
+{% extends "base1.html" %}
+{% load static %}
+
+<!--add css-->
+{% block css_block %}
+<script type="text/javascript" src="{% static 'js/logout.js' %}"></script>
+<!--link rel="stylesheet" href="{% static 'css/login_app/login.css' %}"-->
+{% endblock %}
+
+<!--title -->
+{% block title %}
+<title>logout</title>
+{% endblock %}
+
+<!--body-->
+{% block body_block %}
+<p>ログアウトしました...</p>
+<p>アプリに戻るためには再度ログインが必要です</p>
+<p><a href="{% url 'login'%}">ログイン</a></p>
+{% endblock %}
+

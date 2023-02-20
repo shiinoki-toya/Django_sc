@@ -1,0 +1,23 @@
+{% extends "base2.html" %}
+{% load static %}
+
+<!--add css-->
+{% block css_block %}
+<link rel="stylesheet" href="{% static 'css/login_app/user.css' %}">
+{% endblock %}
+
+<!--title -->
+{% block title %}
+<title>user</title>
+{% endblock %}
+
+<!--body-->
+{% block body_block %}
+<div class = "content">
+    <h1>User Name : {{user.username}}</h1>
+    <p>連絡先：{{user.email}}</p>
+    <p>アカウント作成日：{{user.date_joined}}</p>
+    <p><a href="{% url 'other'%}">他のユーザーの情報</a></p>
+    <p><a href="{% url 'logout'%}">ログアウト</a></p>
+</div>
+{% endblock %}

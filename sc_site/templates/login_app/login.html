@@ -1,0 +1,26 @@
+{% extends "base1.html" %}
+{% load static %}
+
+    <!--add css-->
+    {% block css_block %}
+    <link rel="stylesheet" href="{% static 'css/login_app/login.css' %}">
+    {% endblock %}
+
+    <!--title -->
+    {% block title %}
+    <title>login</title>
+    {% endblock %}
+
+    <!--body-->
+    {% block body_block %}
+    <div class= "form">
+      <h1>Login</h1>
+      <form action="{% url 'login'%}" method="post">
+      {% csrf_token %}
+          {{ form.as_p }}
+       <p><input type="hidden" name="next" value="{{next}}"></p>
+       <p><input type="submit" value="login"></p>
+      </form>
+      <button onclick='location.href="{% url "signup" %}"'>sign up</button>
+    </div>
+    {% endblock %}
